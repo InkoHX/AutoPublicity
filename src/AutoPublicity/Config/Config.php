@@ -51,8 +51,24 @@ class Config
     /**
      * @return string
      */
+    public static function getServerName(): string
+    {
+        return Main::getInstance()->getConfig()->get('servername');
+    }
+
+    /**
+     * @return string
+     */
+    public static function getIp(): string
+    {
+        return Main::getInstance()->getConfig()->get('ip');
+    }
+
+    /**
+     * @return string
+     */
     public static function getSendMessage(): string
     {
-        return Main::getInstance()->getServer()->getName() . "\n\n紹介文\n" . self::getMessage() . "\n\n\nIP: " . Main::getInstance()->getServer()->getIp() . "\nPORT: " . Main::getInstance()->getServer()->getPort() . "\n\n\nグループ: " . self::getInviteURL();
+        return "Software: " . Main::getInstance()->getServer()->getName() . "\nサーバーネーム: " . self::getServerName() . "\n\n紹介文\n" . self::getMessage() . "\nPLAYERS: " . count(Main::getInstance()->getServer()->getOnlinePlayers()) . "/" . Main::getInstance()->getServer()->getMaxPlayers() . "\nIP: " . self::getIp() . "\nPORT: " . Main::getInstance()->getServer()->getPort() . "\n\n\nグループ: " . self::getInviteURL();
     }
 }

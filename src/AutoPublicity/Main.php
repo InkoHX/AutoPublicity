@@ -20,6 +20,10 @@ class Main extends PluginBase
     {
         self::$instance = $this;
         $this->saveDefaultConfig();
+    }
+
+    public function onEnable()
+    {
         $this->lobiapi = new LobiAPI();
         if ($this->lobiapi->Login(Config::getEmail(), Config::getPassword())) {
             $this->getLogger()->info("ログイン成功");
