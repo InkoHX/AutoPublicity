@@ -19,6 +19,7 @@ class Main extends PluginBase
     public function onLoad()
     {
         self::$instance = $this;
+        $this->saveDefaultConfig();
         $this->lobiapi = new LobiAPI();
         if ($this->lobiapi->Login(Config::getEmail(), Config::getPassword())) {
             $this->getLogger()->info("ログイン成功");
