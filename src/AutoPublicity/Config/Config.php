@@ -69,6 +69,6 @@ class Config
      */
     public static function getSendMessage(): string
     {
-        return "Software: " . Main::getInstance()->getServer()->getName() . "\nサーバーネーム: " . self::getServerName() . "\n\n紹介文\n" . self::getMessage() . "\nPLAYERS: " . count(Main::getInstance()->getServer()->getOnlinePlayers()) . "/" . Main::getInstance()->getServer()->getMaxPlayers() . "\nIP: " . self::getIp() . "\nPORT: " . Main::getInstance()->getServer()->getPort() . "\n\n\nグループ: " . self::getInviteURL();
+        return "Software: " . Main::getInstance()->getServer()->getName() . "\nサーバーネーム: " . self::getServerName() . "\n\n紹介文\n" . self::getMessage() . "\n\nPLAYERS: " . count(Main::getInstance()->getServer()->getOnlinePlayers()) . "/" . Main::getInstance()->getServer()->getMaxPlayers() . "\nIP: " . self::getIp() . "\nPORT: " . Main::getInstance()->getServer()->getPort() . "\n\n\nグループ: " . self::getInviteURL();
     }
 }
